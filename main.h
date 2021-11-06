@@ -18,8 +18,9 @@ struct list
 };
 
 
-
-
+int function_c(va_list);
+int function_s(va_list);
+int function_por(va_list);
 int _strlen(char *s);
 int _putchar(char c);
 int _printf(const char *format, ...);
