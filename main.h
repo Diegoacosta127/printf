@@ -1,5 +1,6 @@
 #ifndef MAIN_H
 #define MAIN_H
+#include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
 
@@ -10,15 +11,16 @@
  */
 
 
-typedef struct list
+struct list
 {
 	char c;
 	int (*f)(va_list);
-} li;
+};
 
 
 
 
 int _strlen(char *s);
+int _putchar(char c);
 int _printf(const char *format, ...);
 #endif
