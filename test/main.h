@@ -7,19 +7,21 @@
 /**
  * struct list - c, f
  * @c: character to check
- * @f: Pointer to function
+ * @f: Pointer to function, that prts correspondingly
  */
 
 
-struct list
+typedef struct list
 {
 	char c;
 	int (*f)(va_list);
 } all_cases;
 
-
+void selector(char str, va_list ap);
 int function_c(va_list);
 int function_s(va_list);
+int function_d(va_list);
+int function_i(va_list);
 int function_por(va_list);
 int _strlen(char *s);
 int _putchar(char c);
