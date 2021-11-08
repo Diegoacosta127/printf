@@ -28,7 +28,8 @@ int selector(char str, va_list ap)
 		{'c', function_c},
 		{'s', function_s},
 		{'d', function_d},
-		{'i', function_i}
+		{'i', function_i},
+		{0, NULL}
 	};
 	/**
 	 * while cases[] evaluated in i, for the "char c" defined in the

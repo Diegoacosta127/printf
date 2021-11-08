@@ -27,7 +27,8 @@ int _printf(const char *format, ...)
 		else if (format[i] == '%' && format[i + 1] == '%')/**check if next is %*/
 		{
 			_putchar('%');
-			ctr++; /** need to update ctr to b printed*/
+			ctr++;
+				/** need to update ctr to b printed*/
 		}
 		else if (format[i] == '%' && format[i + 1] != 0)
 		{

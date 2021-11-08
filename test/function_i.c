@@ -9,12 +9,5 @@
 */
 int function_i(va_list a_int)
 {
-	int i;
-	int k = 0;
-
-	i = va_arg(a_int, int);
-
-	_putchar(i);
-	k++;
-	return (k);
+	return (function_d(a_int));
 }
