@@ -44,11 +44,12 @@ int selector(char str, va_list ap)
 			 * then call the corresponding foo.
 			 */
 			count += cases[i].f(ap);
+			return (count);
 
 			/** Do we need to return a counter? */
 		}
 	}
-return (count);
+return (0);
 }
 
 

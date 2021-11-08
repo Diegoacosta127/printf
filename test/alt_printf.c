@@ -27,23 +27,20 @@ int _printf(const char *format, ...)
 		else if (format[i] == '%' && format[i + 1] == '%')/**check if next is %*/
 		{
 			_putchar('%');
-			i++;
 			ctr++; /** need to update ctr to b printed*/
 		}
-		else if (format[i] == '%')
+		else if (format[i] == '%' && format[i + 1] != 0)
 		{
 			/**
 			 * Si el char que sigue, no es nulo, revisá que sea
 			 * alguno de los formatos quenos dan e imprimí el
 			 * dato en sí
 			 */
-			if (format[i + 1] != '\n')
-			{
-				ctr *= selector(format[i], args_to_print);
-			}
-			else if (format[i + 1] == 0)
-				return (-1);
+			ctr = ctr + selector(format[i], args_to_print);
 		}
-	}
+		else if (format[i + 1] == 0)
+			return (-1);
+		}
+	va_end(args_to_print);
 return (ctr);
 }

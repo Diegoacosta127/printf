@@ -10,15 +10,11 @@
 int function_i(va_list a_int)
 {
 	int i;
-	int j = 0;
 	int k = 0;
 
 	i = va_arg(a_int, int);
 
-	if (i < j)
-	{
-		_putchar(i);
-		k++;
-	}
+	_putchar(i);
+	k++;
 	return (k);
 }

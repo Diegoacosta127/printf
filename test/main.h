@@ -22,7 +22,7 @@ int function_c(va_list ap);
 int function_s(va_list ap);
 int function_d(va_list ap);
 int function_i(va_list ap);
-int function_por(va_list);
+int function_por(va_list ap);
 int _strlen(char *s);
 int _putchar(char c);
 int _printf(const char *format, ...);
