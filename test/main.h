@@ -17,7 +17,7 @@ typedef struct list
 	int (*f)(va_list);
 } all_cases;
 
-void selector(char str, va_list ap);
+int selector(char str, va_list ap);
 int function_c(va_list);
 int function_s(va_list);
 int function_d(va_list);

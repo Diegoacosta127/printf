@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdarg.h>
-
 /**
  * _printf - Prints what it is given
  * @format: String that holds what is going to print
@@ -11,6 +10,7 @@ int _printf(const char *format, ...)
 	unsigned int i, ctr = 0;
 
 	va_list args_to_print; /** type for iterating args*/
+
 	va_start(args_to_print, format); /** start iterating args */
 
 	/** check if format not null & has specifier*/
@@ -32,31 +32,19 @@ int _printf(const char *format, ...)
 		}
 		else if (format[i] == '%')
 		{
-			/** Si el char que sigue, no es nulo, revisá que sea
-			 * alguno de los formatos quenos dan e imprimí el 
+			/**
+			 * Si el char que sigue, no es nulo, revisá que sea
+			 * alguno de los formatos quenos dan e imprimí el
 			 * dato en sí
 			 */
 			if (format[i + 1] != '\n')
 			{
-
-
-
-
-
+				selector(format[i], args_to_print);
+				ctr++;
 			}
 			else if (format[i + 1] == 0)
 				return (-1);
 		}
-
-
-
-		
-
-
-
-			
-
-
-
-
+	}
+return (ctr);
 }

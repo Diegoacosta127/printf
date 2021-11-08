@@ -8,7 +8,10 @@
 
 int function_c(va_list a_char)
 {
-
+	/**
+	 * Store the va_arg call so it doesn't get incremented
+	 * when you use it again
+	 */
 	char single_char = va_arg(a_char, int);
 	/**Prints that single char*/
 	_putchar(single_char);

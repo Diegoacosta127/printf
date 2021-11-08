@@ -4,7 +4,7 @@
  * @str: is the str we get from the function _printf
  * that is walking.
  * @ap: the argument pointer received from _printf
- *
+ * Return: returns how many times a foo was called
  */
 
 /**
@@ -20,9 +20,9 @@
  */
 
 
-void selector(char str, va_list ap)
+int selector(char str, va_list ap)
 {
-	unsigned int i = 0;
+	unsigned int i, count = 0;
 
 	all_cases cases[] = {
 		{'c', function_c},
@@ -43,11 +43,12 @@ void selector(char str, va_list ap)
 			 * matches what comes from the _printf,
 			 * then call the corresponding foo.
 			 */
-			cases[i].f(ap);
+			count += cases[i].f(ap);
 
 			/** Do we need to return a counter? */
 		}
 	}
+return (count);
 }
 
 
