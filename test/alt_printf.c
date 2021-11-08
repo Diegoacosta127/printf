@@ -10,8 +10,8 @@ int _printf(const char *format, ...)
 {
 	unsigned int i, ctr = 0;
 
-	va_list to_print; /** type for iterating args*/
-	va_start(to_print, format); /** start iterating args */
+	va_list args_to_print; /** type for iterating args*/
+	va_start(args_to_print, format); /** start iterating args */
 
 	/** check if format not null & has specifier*/
 	if (!format && (format[0] == '%' && format[1] == '\n'))
@@ -30,8 +30,22 @@ int _printf(const char *format, ...)
 			/** i++;*/
 			ctr++; /** need to update ctr to b printed*/
 		}
-		else if (format[i] == '%' && (format[i + 1] != '%')
-		{/**call a foo that prints what we want using the va_arg(to_print,format)*/
+		else if (format[i] == '%')
+		{
+			/** Si el char que sigue, no es nulo, revisá que sea
+			 * alguno de los formatos quenos dan e imprimí el 
+			 * dato en sí
+			 */
+			if (format[i + 1] != '\n')
+			{
+
+
+
+
+			}
+			else if (format[i + 1] == 0)
+				return (-1);
+		}
 
 
 
