@@ -3,27 +3,27 @@
 #include <stdarg.h>
 #include <stdlib.h>
 /**
-*Fun_c -Print a single char
-*@c: char
-*Return: 0
+* foo_c -Print a single char
+* @args: char
+* Return: characters printed
 */
-int Fun_c(va_list c)
+int foo_c(va_list args)
 {
-	char ch = (char)va_arg(c, int);
+	char ch = (char)va_arg(args, int);
 
 	_putchar(ch);
 	return (1);
 }
 
 /**
-*Fun_s -Print a string
-*@s: String
-*Return: 0
+* foo_s -Print a string
+* @args: String
+* Return: number of chars printed
 */
-int Fun_s(va_list s)
+int foo_s(va_list args)
 {
 	int i;
-	char *str = va_arg(s, char *);
+	char *str = va_arg(args, char *);
 
 	if (str == NULL)
 		str = "(null)";
