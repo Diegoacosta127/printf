@@ -1,1 +1,41 @@
-Tj
+.NAME
+	
+	_printf - Produce output according to a format.
+	
+
+.SYNOPSIS
+	
+	#include "main.h"
+	
+	int _printf(const char *format, ...)
+	
+	_printf[argument]
+
+
+.DESCRIPTION
+	
+	The function _printf produces output according to a format and write output to stdout.
+
+
+.FORMAT - Begins with percent(%) sign followed by conversion character, as shown below
+	
+	
+	- %s: Print a string
+	- %c: Print a singles character
+	- %d: Print integers as a signed decimal number (base 10)
+	- %i: Print integers in base 10
+	- %%: Print a percent(%) sign
+
+
+
+.SEE ALSO
+	
+	printf(1), _putchar(3)
+
+.BUGS
+
+	If theres any bug, please report it to <https://www.gnuHolberton.org/software/coreutils/>
+
+.AUTHOR
+	
+	Diego Monfort, Andres Henderson, Diego Acosta
