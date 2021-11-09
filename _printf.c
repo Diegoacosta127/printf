@@ -15,9 +15,7 @@ int _printf(const char *format, ...)
 	for (; format[i] != 0; i++)
 	{
 		if (format[i] == '%' && format[i + 1] == '%')
-		{/** if % && next is %, then print %*/
-			i++, _putchar(format[i]), ctr++;
-		}
+			i++, _putchar(format[i]), ctr++;/** if % && next is %, then print %*/
 		else if (format[i] == '%' && format[i + 1] != '%')
 		{
 			switch (format[++i])/**first augment and then do*/
@@ -34,10 +32,10 @@ int _printf(const char *format, ...)
 				case 'i':/** same case as d*/
 					ctr += foo_d(arguments);
 					break;
-				case 'd':
+				case 'd':/** case decimal & int*/
 					ctr += foo_d(arguments);
 					break;
-				case '\0':
+				case '\0': /** case end of st*/
 					return (-1);
 				default:
 					_putchar('%'), _putchar(format[i]), ctr += 2;
