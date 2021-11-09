@@ -46,6 +46,6 @@ from the one shown in the examples
 | %% | Print a percent(%) sign | :heavy_check_mark: |
 
 ## Authors Github´s
-- [Diego Monfort](https://github.com/DiegoMHol) :+1:
-- [Diego Acosta](https://github.com/Diegoacosta127) :+1:
-- [Andres Henderson](https://github.com/andresovichh) :+1:
+- [Diego Monfort](https://github.com/DiegoMHol) :uruguay:
+- [Diego Acosta](https://github.com/Diegoacosta127) :uruguay:
+- [Andres Henderson](https://github.com/andresovichh) :uruguay:
