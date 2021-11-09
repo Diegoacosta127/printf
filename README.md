@@ -27,10 +27,20 @@ from the one shown in the examples
 
 ## Authorized Functions and macros
 
-- write (man 2 write)
-- malloc (man 3 malloc)
-- free (man 3 free)
-- va_start (man 3 va_start)
-- va_end (man 3 va_end)
-- va_copy (man 3 va_copy)
-- va_arg (man 3 va_arg)
+- *write*
+- *malloc*
+- *free*
+- *va_start*
+- *va_end*
+- *va_copy*
+- *va_arg*
+
+## Tasks
+
+| Format Specifier | Operation
+| --- | --- |
+| %c | Print single characters |
+| %i | Print integers in base 10 |
+| %d | Print integers as a signed decimal number |
+| %s | Print a string |
+| %% | Print a percent(%) sign |
