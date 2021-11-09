@@ -1,27 +1,12 @@
-#ifndef MAIN_H
-#define MAIN_H
-#include <stdio.h>
-#include <stdlib.h>
+#ifndef OUR_PRINTF
+#define OUR_PRINTF
 #include <stdarg.h>
-
-/**
- * struct list - c, f
- * @c: character to check
- * @f: Pointer to function
- */
-
-
-struct list
-{
-	char c;
-	int (*f)(va_list);
-};
-
-
-int function_c(va_list);
-int function_s(va_list);
-int function_por(va_list);
-int _strlen(char *s);
+#include <stdlib.h>
+int _printf(const char *format,...);
 int _putchar(char c);
-int _printf(const char *format, ...);
+int foo_d(va_list args);
+int foo_c(va_list args);
+int foo_s(va_list args);
+
+
 #endif

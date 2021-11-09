@@ -11,7 +11,8 @@ int _printf(const char *format, ...)
 	va_list args_to_print; /** type for iterating args*/
 
 	va_start(args_to_print, format); /** start iterating args */
-	if (!format || (format[0] == '%' && format[1] == '\n'))
+
+	if (!format || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 	for (i = 0; format[i] != 0; i++)
 	{/**print if no specifier is found*/
@@ -20,29 +21,28 @@ int _printf(const char *format, ...)
 			_putchar(format[i]), ctr++;
 		}
 		else if (format[i] == '%' && format[i + 1] == '%')/**check if next is %*/
-			_putchar('%'), ctr++;
+			i++, _putchar('%'), ctr++;
 		else if (format[i] == '%' && format[i + 1] != 0)
 		{
 			switch (format[i + 1])
 			{
 				case 'c':
-					ctr += function_c(args_to_print);
+					ctr += function_c(va_arg(args_to_print, char *));
 					break;
 				case 's':
-					ctr += function_s(args_to_print);
+					ctr += function_s(va_arg(args_to_print, int));
 					break;
 				case 'i':
-					ctr += function_i(args_to_print);
+					ctr += function_i(va_arg(args_to_print, int));
 					break;
 				case 'd':
-					ctr += function_d(args_to_print);
+					ctr += function_d(va_arg(args_to_print, int));
 					break;
 				default:
-					_putchar('%'), _putchar(format[i]), ctr += 2;
+					_putchar('%'), _putchar(format[i]);
 			}
 		}
 	}
 	va_end(args_to_print);
-	printf("%d", ctr);
 return (ctr);
 }

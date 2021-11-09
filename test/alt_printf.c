@@ -14,7 +14,7 @@ int _printf(const char *format, ...)
 	va_start(args_to_print, format); /** start iterating args */
 
 	/** check if format not null & has specifier*/
-	if (!format && (format[0] == '%' && format[1] == '\n'))
+	if (!format || (format[0] == '%' && format[1] == '\n'))
 		return (-1);
 	/** start to check if there are % and specifiers*/
 	for (i = 0; format[i] != 0; i++)
@@ -37,10 +37,15 @@ int _printf(const char *format, ...)
 			 * alguno de los formatos quenos dan e imprimí el
 			 * dato en sí
 			 */
-			ctr = ctr + selector(format[i], args_to_print);
+
+			selector(format[i + 1]);
+			if (!selector(format[i + 1]))
+			{
+				_putchar(format[i]);
+				_putchar(format[i + 1]);
+			}
 		}
-		else if (format[i + 1] == 0)
-			return (-1);
+
 		}
 	va_end(args_to_print);
 return (ctr);

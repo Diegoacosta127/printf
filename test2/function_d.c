@@ -1,29 +1,29 @@
 #include "main.h"
 
 /**
- * function_d - Prints a digit
- * @ap: arguments from variadic fun _printf to be printed
- * Return: lenght of printed
+ * function_d - Prints integer.
+ * @n: The integer to printeded.
+ *Return: a
  */
-int function_d(va_list ap)
+int function_d(long int n)
 {
-	unsigned int j = 0;
-	int n = va_arg(ap, int);
+	long int d = n;
+	int f = 0;
 
-	if (n < 0) /** check if n is negative */
+	if (n)
 	{
-		j += _putchar('-'); /** if it is, print a minus sign*/
-		n  = -n; /** then make n positive*/
+		if (n < 0)
+		{
+			f += _putchar('-');
+			d = -d;
+		}
+		if ((d / 10) > 0)
+			f += function_d(d / 10);
+		f += _putchar((d % 10) + '0');
 	}
-	else if (n == 0)
+	else
 	{
-		j += _putchar('0');
-		return (0);
+		f += _putchar(n + '0');
 	}
-	while (n != 0)
-	{
-		j += _putchar('0' + (n % 10));
-		n /= 10;
-	}
-return (j);
+	return (f);
 }

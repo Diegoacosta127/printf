@@ -1,54 +1,51 @@
 #include "main.h"
-#include <stdarg.h>
-#define BUFFER_SIZE 1024
-#include <unistd.h>
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * _printf - print whatever is given
+ * @format: arguments
+ * Return: number of characters printed
  */
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
-/**
-  * struct list ap - array of structs
-  */
-struct list ap[] = {
-	{'c', function_c}, {'s', function_s}, {'%', function_por}
-};
-/**
-  * _printf - produces output according to a format
-  * @format: the output to be printed
-  * Return: number of characters printed
-  */
 int _printf(const char *format, ...)
 {
-	int i, j;
 	va_list arguments;
+	int ctr = 0, i = 0;
 
-	/**
-	  * struct list ap - array of structs
-	  */
-	struct list ap[] = {
-		{'c', function_c}, {'s', function_s}, {'%', function_por}
-	};
+	if (!format)
+		return (-1);/** if no format, or % and next is end rtrn -1*/
 	va_start(arguments, format);
-	for (i = 0; format[i] != '\0'; i++)
+	for (; format[i] != 0; i++)
 	{
-		if (format[i] == '%')
+		if (format[i] == '%' && format[i + 1] == '%')
+		{/** if % && next is %, then print %*/
+			i++, _putchar(format[i]), ctr++;
+		}
+		else if (format[i] == '%' && format[i + 1] != '%')
 		{
-			i++;
-			for (j = 0; j < 3; j++)
+			switch (format[++i])/**first augment and then do*/
 			{
-				if (ap[j].c == format[i])
-					ap[j].f(va_list);
+				case 's': /** print a string*/
+					ctr += foo_s(arguments);
+					break;
+				case 'c': /** print a single char*/
+					ctr += foo_c(arguments);
+					break;
+				case '%': /** if +1 is also putchar, print %*/
+					_putchar('%'), ctr++;
+					break;
+				case 'i':/** same case as d*/
+					ctr += foo_d(arguments);
+					break;
+				case 'd':
+					ctr += foo_d(arguments);
+					break;
+				case '\0':
+					return (-1);
+				default:
+					_putchar('%'), _putchar(format[i]), ctr += 2;
 			}
 		}
-		else
-			_putchar(format[i]);
+		else /**if no %, just walk and print*/
+		_putchar(format[i]), ctr++;
 	}
-	va_end(arguments);
-	return (0);
+va_end(arguments);
+return (ctr);
 }
