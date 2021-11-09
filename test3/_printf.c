@@ -33,6 +33,8 @@ int _printf(const char *format, ...)
 					_putchar('%'), ctr++;
 					break;
 				case 'i':/** same case as d*/
+					ctr += foo_d(arguments);
+					break;
 				case 'd':
 					ctr += foo_d(arguments);
 					break;

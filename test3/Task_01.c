@@ -7,12 +7,12 @@
 *@args: Decimal to print
 *Return: Number of digits printes
 */
-int foo_d (va_list args)
+int foo_d(va_list args)
 {
 	int a[10];
 	int i, j, k, l, sum;
 
-	k = va_arg(d, int);
+	k = va_arg(args, int);
 	l = 0;
 	j = 100000000;
 	a[0] = k / j;
