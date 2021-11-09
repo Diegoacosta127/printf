@@ -16,7 +16,7 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%' && format[i + 1] == '%')
 		{/** if % && next is %, then print %*/
-			_putchar(format[i]), ctr++;
+			i++, _putchar(format[i]), ctr++;
 			continue;
 		}
 		else if (format[i] == '%' && format[i + 1] != '%')
