@@ -37,13 +37,13 @@ from the one shown in the examples
 
 ## Tasks
 
-| Format Specifier | Operation
-| --- | --- |
-| %c | Print single characters |
-| %i | Print integers in base 10 |
-| %d | Print integers as a signed decimal number |
-| %s | Print a string |
-| %% | Print a percent(%) sign |
+| Format Specifier | Operation |   |
+| --- | --- | --- |
+| %c | Print single characters | :heavy_check_mark: |
+| %i | Print integers in base 10 | :heavy_check_mark: |
+| %d | Print integers as a signed decimal number | :heavy_check_mark: |
+| %s | Print a string | :heavy_check_mark: |
+| %% | Print a percent(%) sign | :heavy_check_mark: |
 
 ## Authors Github´s
 - [Diego Monfort](https://github.com/DiegoMHol) :+1:
