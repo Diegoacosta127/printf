@@ -1,0 +1,35 @@
+#include "main.h"
+
+/**
+ * cases - checks each case
+ * @
+ * Return: the counter of printed stuff
+ */
+
+
+int cases()
+{
+	switch (format[++i])/**first augment and then do*/
+	{
+		case 's': /** print a string*/
+			ctr += foo_s(arguments);
+			break;
+		case 'c': /** print a single char*/
+			ctr += foo_c(arguments);
+			break;
+		case '%': /** if +1 is also putchar, print %*/
+			_putchar('%'), ctr++;
+			break;
+		case 'i':/** same case as d*/
+			ctr += foo_d(arguments);
+			break;
+		case 'd':
+			ctr += foo_d(arguments);
+			break;
+		case '\0':
+			return (-1);
+		default:
+			_putchar('%'), _putchar(format[i]), ctr += 2;
+	}
+return (ctr);
+}
