@@ -1,27 +1,26 @@
 #include "main.h"
 /**
- * _printf - print anything
+ * _printf - print whatever is given
  * @format: arguments
  * Return: number of characters printed
  */
 int _printf(const char *format, ...)
 {
 	va_list arguments;
-	int ctr, i = 0;
+	int ctr = 0, i = 0;
 
-	if (!format || (format[0] == '%' && format[1] == '\0'))
+	if (!format)
 		return (-1);/** if no format, or % and next is end rtrn -1*/
 	va_start(arguments, format);
-	for (i = 0; format[i] != 0; i++)
+	for (; format[i] != 0; i++)
 	{
 		if (format[i] == '%' && format[i + 1] == '%')
 		{/** if % && next is %, then print %*/
 			i++, _putchar(format[i]), ctr++;
-			continue;
 		}
 		else if (format[i] == '%' && format[i + 1] != '%')
 		{
-			switch (format[++i])
+			switch (format[++i])/**first augment and then do*/
 			{
 				case 's': /** print a string*/
 					ctr += foo_s(arguments);
@@ -38,12 +37,14 @@ int _printf(const char *format, ...)
 				case 'd':
 					ctr += foo_d(arguments);
 					break;
+				case '\0':
+					return (-1);
 				default:
 					_putchar('%'), _putchar(format[i]), ctr += 2;
 			}
 		}
-		else/**if no %, just walk and print*/
-			_putchar(format[i]), ctr++;
+		else /**if no %, just walk and print*/
+		_putchar(format[i]), ctr++;
 	}
 va_end(arguments);
 return (ctr);
