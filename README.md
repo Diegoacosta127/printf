@@ -44,3 +44,8 @@ from the one shown in the examples
 | %d | Print integers as a signed decimal number |
 | %s | Print a string |
 | %% | Print a percent(%) sign |
+
+## Authors Github´s
+- [Diego Monfort](https://github.com/DiegoMHol)
+- [Diego Acosta](https://github.com/Diegoacosta127)
+- [Andres Henderson](https://github.com/andresovichh)
