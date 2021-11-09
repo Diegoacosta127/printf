@@ -10,7 +10,7 @@
 
 int foo_d(va_list args)
 {
-	int i, div, len;
+	int i, div, len; /** length of printed*/
 	unsigned int num;
 
 	i = va_arg(args, int); /** Stored so won't change in new call*/
@@ -28,14 +28,14 @@ int foo_d(va_list args)
 
 	for (; num / div > 9;)
 	{
-		div *= 10;
+		div = div * 10;
 	}
 
 	for (; div != 0;)
 	{
-		len += _putchar('0' + (num / div));
-		num %= div;
-		div /= 10;
+		len += _putchar('0' + (num / div));/**prints a number*/
+		num = num % div;/** removes number already printed*/
+		div = div / 10; /** div to print next n*/
 	}
 
 	return (len);
