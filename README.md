@@ -55,7 +55,6 @@ from the one shown in the examples
 | man_3_printf | Manual page |
 | printf.c | Main function |
 | _putchar.c | Putchar function |
-| README.md | What you are reading :joy: |
 
 
 ## Authors Github´s
