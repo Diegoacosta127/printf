@@ -45,6 +45,19 @@ from the one shown in the examples
 | %s | Print a string | :heavy_check_mark: |
 | %% | Print a percent(%) sign | :heavy_check_mark: |
 
+## Repository Files
+
+| Name | Description |
+| --- | --- |
+| main.h | Include prototypes |
+| Task_0.c | Includes functions (Task 0) |
+| Task_01.c | Includes functions (Task 1) |
+| man_3_printf | Manual page |
+| printf.c | Main function |
+| _putchar.c | Putchar function |
+| README.md | What you are reading :joy: |
+
+
 ## Authors Github´s
 - [Diego Monfort](https://github.com/DiegoMHol) :uruguay:
 - [Diego Acosta](https://github.com/Diegoacosta127) :uruguay:
